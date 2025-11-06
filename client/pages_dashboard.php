@@ -253,7 +253,7 @@ $stmt->close();
                     <div class="col-sm-3 col-6">
                       <div class="description-block border-right">
                         <h5 class="description-header">$ <?php echo $iB_Transfers; ?> </h5>
-                        <span class="description-text">TOTAL TRANSFERS</span>
+                        <span class="description-text">TOTAL TRANSFERS TO MANAS ACCOUNTS</span>
                       </div>
                       <!-- /.description-block -->
                     </div>
