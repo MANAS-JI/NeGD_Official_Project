@@ -10,7 +10,8 @@
 **Admin Login Details**
 
 Email	: admin@mail.com
-Password: codeastro.com
+Password: Manasji@10
+
 
 
 **Staff Login Details**
