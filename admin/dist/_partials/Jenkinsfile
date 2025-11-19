@@ -2,24 +2,30 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+
+        stage('Checkout Code') {
             steps {
+                echo "Pulling latest code from GitHub..."
                 checkout scm
             }
         }
-        stage('Build') {
+
+        stage('Copy to XAMPP htdocs') {
             steps {
-                echo "Project Build Started..."
+                echo "Copying project files to XAMPP2 htdocs..."
+                bat '''
+                    xcopy * "C:\\XAMPP2\\htdocs\\InternetBanking-PHP" /E /H /C /Y
+                '''
             }
         }
-        stage('Test') {
+
+        stage('Restart Apache Server') {
             steps {
-                echo "Running Tests..."
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo "Deploying website..."
+                echo "Restarting Apache..."
+                bat '''
+                    C:\\XAMPP2\\xampp_stop.exe
+                    C:\\XAMPP2\\xampp_start.exe
+                '''
             }
         }
     }
